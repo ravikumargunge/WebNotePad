@@ -6,14 +6,14 @@ using System.Data.SqlClient;
 
 namespace WebNotePad.Infrastructure
 {
-    public class Context : DbContext
+    public class MyApplicationDbContext : DbContext
     {
-        public Context(): base { 
+        public MyApplicationDbContext(DbContextOptions options) : base(options){ 
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-U7TPA9V\SQLEXPRESS;User Id= sa; Password=Fuck@123;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=FRVPCX230;Initial Catalog=WebNotePad;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
