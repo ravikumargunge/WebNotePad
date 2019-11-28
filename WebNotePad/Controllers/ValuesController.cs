@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebNotePad.Infrastructure;
-using WebNotePad.Core.Services;
 using WebNotePad.Core;
 using WebNotePad.Core.Models;
 
@@ -16,9 +15,8 @@ namespace WebNotePad.Controllers
         // MyApplicationDbContext dbContext = new MyApplicationDbContext()
          INoteRepository<Core.Models.Note> _service;
         
-       public ValuesController(NoteService service)
+       public ValuesController()
         {
-            _service = service;
         }
 
         // GET api/values
@@ -27,7 +25,7 @@ namespace WebNotePad.Controllers
         {
             //   dbContext.Add(new Note() { DateCreated = DateTime.Now, Message = "Example First", Title = "Example Note Pad 1" });
             //dbContext.SaveChanges();
-            _service.Add(new Core.Models.Note() { DateCreated = DateTime.Now, Message = "My First Note", Title = "Test" });
+           //  _service.Add(new Core.Models.Note() { DateCreated = DateTime.Now, Message = "My First Note", Title = "Test" });
             return new string[] { "value1", "value2" };
         }
 

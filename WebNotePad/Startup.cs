@@ -28,7 +28,7 @@ namespace WebNotePad
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<MyApplicationDbContext>(options => options.UseSqlServer(connection));
-            services.AddScoped<INoteRepository<Note>, NoteRepository>();
+            //services.AddScoped<INoteRepository<Note>, NoteRepository>();
             services.AddMvc();
         }
 

@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Note.cs" />
     <Compile Remove="ServiceCollectionExtensions.cs" />
+    <Compile Remove="Tag.cs" />
   </ItemGroup>
 
   <ItemGroup>
